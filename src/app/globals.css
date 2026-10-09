@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  /* New custom palette */
+  --primary: #F99C44;
+  --primary-hover: #e08b3c;
+  --secondary: #255D77;
+  --tertiary: #939EA2;
+  --danger-red: #DB492D;
+  --surface-canvas: #F4F0ED;
+  --surface-subtle: #ffffff;
+  --surface-border: #939EA2;
+  --on-surface: #255D77;
+  --bs-heading-color: #255D77;
+
+  /* POS vibrant palette */
+  --pos-navy: #092C4C;
+  --pos-orange: #FE9F43;
+  --pos-teal: #0E9384;
+}
+
+body {
+  background-color: var(--surface-canvas);
+  color: var(--on-surface);
+  font-family: 'Inter', system-ui, Arial, 'Open Sans', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--bs-heading-color);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--bs-heading-color);
+  line-height: 1.2;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Material Symbols Icon styling */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbars for slick high-density UI */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Thermal receipt print stylesheet */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #thermal-receipt-printable, #thermal-receipt-printable * {
+    visibility: visible;
+  }
+  #thermal-receipt-printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    font-size: 11px;
+    line-height: 1.2;
+    background: #fff;
+    color: #000;
+  }
+}
