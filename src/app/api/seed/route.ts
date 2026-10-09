@@ -35,17 +35,17 @@ export async function GET() {
     const uBox = await Unit.create({ name: 'Box', shortCode: 'BOX', allowDecimal: false, isActive: true });
 
     // Categories
-    const cFruits = await Category.create({ name: 'Fresh Fruits', description: 'Daily fresh fruits', isActive: true });
-    const cVeg = await Category.create({ name: 'Vegetables', description: 'Fresh vegetables', isActive: true });
-    const cDairy = await Category.create({ name: 'Dairy & Milk', description: 'Milk, Butter, Cheese', isActive: true });
-    const cSnacks = await Category.create({ name: 'Snacks & Biscuits', description: 'Chips, cookies', isActive: true });
-    const cDrinks = await Category.create({ name: 'Beverages', description: 'Juice, Cola, Water', isActive: true });
-    const cGrains = await Category.create({ name: 'Rice & Grains', description: 'Staples', isActive: true });
+    const cFruits = await Category.create({ name: 'Fresh Fruits', isActive: true });
+    const cVeg = await Category.create({ name: 'Vegetables', isActive: true });
+    const cDairy = await Category.create({ name: 'Dairy & Milk', isActive: true });
+    const cSnacks = await Category.create({ name: 'Snacks & Biscuits', isActive: true });
+    const cDrinks = await Category.create({ name: 'Beverages', isActive: true });
+    const cGrains = await Category.create({ name: 'Rice & Grains', isActive: true });
 
     // SubCategories
-    const scApple = await SubCategory.create({ name: 'Apples', parentCategory: cFruits._id, isActive: true });
-    const scLeafy = await SubCategory.create({ name: 'Leafy Veg', parentCategory: cVeg._id, isActive: true });
-    const scChips = await SubCategory.create({ name: 'Potato Chips', parentCategory: cSnacks._id, isActive: true });
+    const scApple = await SubCategory.create({ name: 'Apples', parentCategory: cFruits._id.toString(), isActive: true });
+    const scLeafy = await SubCategory.create({ name: 'Leafy Veg', parentCategory: cVeg._id.toString(), isActive: true });
+    const scChips = await SubCategory.create({ name: 'Potato Chips', parentCategory: cSnacks._id.toString(), isActive: true });
     
     // Brands
     const bAmul = await Brand.create({ name: 'Amul', isActive: true });
@@ -59,8 +59,8 @@ export async function GET() {
     const sDistributor = await Supplier.create({ supplierName: 'Shiv', companyName: 'City FMCG Distributors', mobile: '9876543211', isActive: true });
 
     // Customers
-    const cust1 = await Customer.create({ name: 'Rahul Sharma', mobile: '9000000001', totalOutstanding: 1500, isActive: true });
-    const cust2 = await Customer.create({ name: 'Priya Patel', mobile: '9000000002', totalOutstanding: 0, isActive: true });
+    const cust1 = await Customer.create({ name: 'Rahul Sharma', mobile: '9000000001', outstanding: 1500 });
+    const cust2 = await Customer.create({ name: 'Priya Patel', mobile: '9000000002', outstanding: 0 });
 
     // Expense Categories
     const ecRent = await ExpenseCategory.create({ name: 'Shop Rent', isActive: true });

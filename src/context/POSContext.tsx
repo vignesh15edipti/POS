@@ -89,7 +89,7 @@ interface POSContextType {
   receiptOrder: Order | null;
   setReceiptOrder: (order: Order | null) => void;
   toastMessage: string | null;
-  showToast: (msg: string) => void;
+  showToast: (msg: string, type?: 'success' | 'error' | 'info') => void;
 }
 
 const POSContext = createContext<POSContextType | undefined>(undefined);
@@ -178,7 +178,7 @@ export const POSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     fetchShift();
   }, []);
 
-  const showToast = (msg: string) => {
+  const showToast = (msg: string, type?: 'success' | 'error' | 'info') => {
     setToastMessage(msg);
     setTimeout(() => {
       setToastMessage(null);

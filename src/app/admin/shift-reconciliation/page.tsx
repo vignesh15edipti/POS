@@ -175,7 +175,6 @@ export default function ShiftReconciliationPage() {
 
           <button
             onClick={handleCloseShift}
-            disabled={activeShift.status === 'CLOSED'}
             className="w-full py-4 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition-all"
           >
             <Lock className="w-4 h-4 text-theme-teal" />

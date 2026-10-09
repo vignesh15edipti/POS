@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
           productId: product._id,
           productName: product.name,
           sku: product.sku,
-          movementType: 'PURCHASE_IN',
+          movementType: 'PURCHASE',
           quantity: item.quantity,
           beforeStock: beforeStock,
           afterStock: afterStock,

@@ -8,7 +8,7 @@ import {
 import { 
   FileText, RefreshCcw, ShoppingCart, ShoppingBag, 
   TrendingUp, FileWarning, DollarSign, CreditCard,
-  ChevronDown, Package, Users, IndianRupee, Calendar
+  ChevronDown, Package, Users, IndianRupee, Calendar, BarChart3
 } from 'lucide-react';
 
 export default function AdminDashboardPage() {
@@ -319,7 +319,7 @@ export default function AdminDashboardPage() {
         {/* Sales & Purchase */}
         <div className="lg:col-span-2 bg-white rounded-xl p-5 shadow-sm border border-slate-100">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="font-bold flex items-center gap-2 text-sm"><span className="text-orange-500 bg-orange-50 p-1.5 rounded-lg"><BarChart size={16} /></span> Sales & Purchase</h3>
+            <h3 className="font-bold flex items-center gap-2 text-sm"><span className="text-orange-500 bg-orange-50 p-1.5 rounded-lg"><BarChart3 size={16} /></span> Sales & Purchase</h3>
             <div className="flex bg-slate-50 p-0.5 rounded-md border border-slate-100">
               {['1D', '1W', '1M', '3M', '6M', '1Y'].map(filter => (
                 <button 

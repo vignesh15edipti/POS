@@ -407,7 +407,7 @@ export default function POSCheckoutPage() {
               <div className="flex gap-2 flex-1 items-center">
                 <div className="relative flex-1">
                   <select
-                    value={selectedCustomer?.id || selectedCustomer?._id || ''}
+                    value={selectedCustomer?.id || ''}
                     onChange={(e) => {
                       if (!e.target.value) {
                         setSelectedCustomer(null);

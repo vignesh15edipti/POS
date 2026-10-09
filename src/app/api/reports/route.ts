@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
             // Assuming purchasePrice is stored in item or using sellingPrice - margin. 
             // In Sale model, we have sellingPriceAtSale. We need purchasePrice for exact COGS.
             // Let's assume average 20% margin if purchasePrice is missing from Sale schema for simplicity in this demo.
-            const cost = item.purchasePrice ? (item.purchasePrice * item.quantity) : (item.sellingPriceAtSale * item.quantity * 0.8);
+            const cost = (item as any).purchasePrice ? ((item as any).purchasePrice * item.quantity) : (item.sellingPriceAtSale * item.quantity * 0.8);
             totalCogs += cost;
           }
         }

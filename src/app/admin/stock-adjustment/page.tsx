@@ -42,8 +42,8 @@ export default function StockAdjustmentPage() {
 
       await adjustStock(
         selectedProduct.id,
-        finalType.includes('OUT') ? -amount : amount,
         finalType,
+        finalType.includes('OUT') ? -amount : amount,
         reason + (notes ? ` - ${notes}` : ''),
         '',
         ''
