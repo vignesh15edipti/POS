@@ -1,4 +1,4 @@
-export type Role = 'ADMIN' | 'STORE_OWNER' | 'CASHIER';
+export type Role = 'OWNER' | 'ADMIN' | 'CASHIER';
 
 export type Category = 
   | 'Groceries & Staples'

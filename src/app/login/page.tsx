@@ -17,7 +17,7 @@ export default function LoginPage() {
   // If already logged in, redirect
   useEffect(() => {
     if (activeUser) {
-      if (activeUser.role === 'STORE_OWNER' || activeUser.role === 'ADMIN' || activeUser.role === 'OWNER') {
+      if (activeUser.role === 'ADMIN' || activeUser.role === 'OWNER') {
         router.push('/admin/dashboard');
       } else {
         router.push('/pos');
