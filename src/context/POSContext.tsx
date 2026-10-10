@@ -114,6 +114,18 @@ export const POSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       try {
         setActiveUser(JSON.parse(stored));
       } catch (e) {}
+    } else {
+      // Temporary auto-login bypass
+      const bypassUser = {
+        id: 'admin-bypass',
+        employeeId: 'ADM-00',
+        name: 'Auto Admin',
+        role: 'ADMIN',
+        counterId: 'COUNTER-01',
+        isActive: true
+      };
+      setActiveUser(bypassUser as any);
+      localStorage.setItem('freshkart_active_user', JSON.stringify(bypassUser));
     }
   }, []);
 
