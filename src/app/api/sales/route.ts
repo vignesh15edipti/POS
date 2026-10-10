@@ -7,6 +7,9 @@ import StockMovement from '@/models/StockMovement';
 import Customer from '@/models/Customer';
 import Setting from '@/models/Setting';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();

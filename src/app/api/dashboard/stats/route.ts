@@ -4,6 +4,9 @@ import Product from '@/models/Product';
 import Sale from '@/models/Sale';
 import StockMovement from '@/models/StockMovement';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();

@@ -7,6 +7,9 @@ import Product from '@/models/Product';
 import Customer from '@/models/Customer';
 import Supplier from '@/models/Supplier';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();

@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import { connectToDatabase } from '@/lib/db';
 import Sale from '@/models/Sale';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
     await connectToDatabase();

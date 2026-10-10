@@ -12,6 +12,9 @@ import Purchase from '@/models/Purchase';
 import ExpenseCategory from '@/models/ExpenseCategory';
 import Expense from '@/models/Expense';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET() {
   try {
     await connectToDatabase();

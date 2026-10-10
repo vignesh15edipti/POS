@@ -3,6 +3,9 @@ import { connectToDatabase } from '@/lib/db';
 import Shift from '@/models/Shift';
 import Sale from '@/models/Sale';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function GET(req: NextRequest) {
   try {
     await connectToDatabase();

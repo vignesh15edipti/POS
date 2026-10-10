@@ -7,6 +7,9 @@ import Product from '@/models/Product';
 import StockMovement from '@/models/StockMovement';
 import Customer from '@/models/Customer';
 
+export const dynamic = 'force-dynamic';
+
+
 export async function POST(req: NextRequest) {
   let session = null;
   try {
