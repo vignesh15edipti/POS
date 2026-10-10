@@ -38,7 +38,7 @@ export async function connectToDatabase() {
     }).catch((err) => {
       console.error('[MongoDB Connection Error]:', err.message);
       cached.promise = null;
-      throw err;
+      throw new Error('Database connection failed. Check your IP whitelist, credentials, or environment variables in Netlify.');
     });
   }
 

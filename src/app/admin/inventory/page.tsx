@@ -77,22 +77,34 @@ export default function InventoryPage() {
     fetchStockHistory();
     fetch('/api/categories?active=true')
       .then(res => res.json())
-      .then(data => setCategories(data))
+      .then(data => {
+        if (Array.isArray(data)) setCategories(data);
+        else console.error('Categories API error:', data);
+      })
       .catch(console.error);
 
     fetch('/api/sub-categories?active=true')
       .then(res => res.json())
-      .then(data => setSubCategories(data))
+      .then(data => {
+        if (Array.isArray(data)) setSubCategories(data);
+        else console.error('Subcategories API error:', data);
+      })
       .catch(console.error);
 
     fetch('/api/brands?active=true')
       .then(res => res.json())
-      .then(data => setBrands(data))
+      .then(data => {
+        if (Array.isArray(data)) setBrands(data);
+        else console.error('Brands API error:', data);
+      })
       .catch(console.error);
 
     fetch('/api/units?active=true')
       .then(res => res.json())
-      .then(data => setUnits(data))
+      .then(data => {
+        if (Array.isArray(data)) setUnits(data);
+        else console.error('Units API error:', data);
+      })
       .catch(console.error);
   }, [fetchProducts, fetchStockHistory]);
 

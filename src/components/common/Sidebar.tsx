@@ -24,7 +24,6 @@ export const Sidebar: React.FC = () => {
       label: 'POS', icon: ShoppingCart,
       children: [
         { label: 'New Sale', href: '/pos', isPos: true },
-        { label: 'Hold Bills', href: '/admin/pos/hold-bills' },
         { label: 'Sales History', href: '/admin/sales' },
       ]
     },
